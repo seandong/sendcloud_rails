@@ -9,7 +9,7 @@ module Sendcloud
     end
 
     def send_message(payload)
-      RestClient::Request.new(url: sendcloud_url, method: :post, payload: payload, verify_ssl: OpenSSL::SSL::VERIFY_NONE)
+      RestClient::Request.execute(url: sendcloud_url, method: :post, payload: payload, verify_ssl: OpenSSL::SSL::VERIFY_NONE)
     end
 
     def sendcloud_url
